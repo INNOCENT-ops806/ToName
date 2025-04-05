@@ -9,7 +9,7 @@ import blazing.https.BlazingRequest;
 
 public class Gemini {
 
-	private static final String MODEL_ID = "gemini-2.5-pro-preview-03-25";
+	private static final String MODEL_ID = "gemini-2.0-flash-thinking-exp-01-21";
 	private static final String GENERATE_CONTENT_API = "streamGenerateContent";
 
 	public static void process(String term) {
