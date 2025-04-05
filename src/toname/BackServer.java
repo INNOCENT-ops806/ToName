@@ -20,6 +20,9 @@ public class BackServer {
 		var page = new Html()
 			.addHeaderStyleLink("https://cdn.jsdelivr.net/npm/daisyui@5")
 			.addHeaderScript("https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4")
+			.addHeaderStyleLink("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css")
+			.addHeaderScript("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.js")
+			.addHeaderScript("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.css")
 			.add(new Scarfold(index));
 
 		response.sendUiRespose(page);
