@@ -6,6 +6,7 @@ import blazing.Post;
 import blazing.WebServer;
 import blazing.fs.FileSystem;
 import webx.Html;
+import webx.IFrame;
 import webx.Scarfold;
 
 /**
@@ -39,7 +40,9 @@ public class BackServer {
 			return;
 		}
 		
-		Gemini.process(term);
-		response.sendResponse("Hello world");
+		var page = Gemini.process(term);
+		var frame = new IFrame();
+		frame.add(new Scarfold(page));
+		response.sendUiRespose(frame);
 	}
 }
