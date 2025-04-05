@@ -15,7 +15,7 @@
       />
       <kbd class="kbd kbd-m">Enter</kbd>
     </label>
-    <button class="btn btn-soft" hx-post="/v1/api/llm/gen" hx-vals='js:{"term" : te.value}'>generate</button>
+    <button class="btn btn-soft" hx-post="/v1/api/llm/gen" hx-vals='js:{"term" : te.value}' hx-target="#page">generate</button>
   </div>
 
   <div class="absolute top-0 right-0 p-5">
