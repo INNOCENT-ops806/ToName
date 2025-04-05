@@ -2,6 +2,7 @@ package toname;
 
 import blazing.BlazingResponse;
 import blazing.Get;
+import blazing.Post;
 import blazing.WebServer;
 import blazing.fs.FileSystem;
 import webx.Html;
@@ -26,5 +27,19 @@ public class BackServer {
 			.add(new Scarfold(index));
 
 		response.sendUiRespose(page);
+	}
+
+	@Post("/v1/api/llm/gen")
+	public static void generate(BlazingResponse response) {
+		String term = response.params().get("term");
+		
+		if (term.isEmpty()) {
+			response.setHeader("Location", "/");
+			response.sendStatus(302);
+			return;
+		}
+		
+		Gemini.process(term);
+		response.sendResponse("Hello world");
 	}
 }
